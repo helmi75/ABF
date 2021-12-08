@@ -6,19 +6,13 @@ import pandas as pd
 import seaborn as sns
 import io
 import os
-from secret import secret   
+
 from millify import millify 
 from millify import millify
 sns.set()
 
 #rapid_key = 'f2b69e8ab2mshc6b37f3259eace5p104495jsnc2a8ef50efc6'
-
-try:
-   rapid_key =secret.get_key()
-except ModuleNotFoundError:
-   print('nous avons pas pu  var_env error')
-
-
+pos.environ['RAPID_KEY'])
 
 
 # configuration 
