@@ -13,7 +13,7 @@ sns.set()
 url = "https://parazun-amazon-data.p.rapidapi.com/search/"
 headers = {
     'x-rapidapi-host': "parazun-amazon-data.p.rapidapi.com",
-    'x-rapidapi-key': "f2b69e8ab2mshc6b37f3259eace5p104495jsnc2a8ef50efc6"
+    'x-rapidapi-key': rapid_key
     }
 list_pays = ['FR']
 nbr_pages = 2
