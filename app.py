@@ -11,8 +11,8 @@ from millify import millify
 from millify import millify
 sns.set()
 
-# test de push
-# test push and pull validé 
+
+
 try:
    rapid_key =secret.get_key()
 except ModuleNotFoundError:
