@@ -11,7 +11,6 @@ from millify import millify
 from millify import millify
 sns.set()
 
-#rapid_key = 'f2b69e8ab2mshc6b37f3259eace5p104495jsnc2a8ef50efc6'
 
 try:
    rapid_key =secret.get_key()
