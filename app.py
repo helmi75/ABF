@@ -280,6 +280,7 @@ elif add_selectbox == 'Comparer plusiseurs produits':
         moyenne_note.append(dict_niche[nom_file]['Rating'].median())
         median_revenu_mensuel.append(dict_niche[nom_file]['Mo. Revenue'].median())
         median_classement.append(dict_niche[nom_file]['Rank'].median())
+        st.write(dict_niche[nom_file].columns)
         median_avis.append(dict_niche[nom_file]['Reviews'].median())
         median_listing.append(dict_niche[nom_file]['LQS'].median())
     
@@ -322,6 +323,8 @@ elif add_selectbox == 'Analyse Excel':
   liste_score_JS_moy = []
   list_nom_produit = []
   liste_pays=[]
+  liste_vol_vente_mensuel = []
+  liste_score_vol_vente_mensuel=[]
   
   for xl_name in excel_file:
     #st.write(xl_name)
@@ -343,6 +346,8 @@ elif add_selectbox == 'Analyse Excel':
       list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
       liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
       list_nom_produit.append(xl_name)
+      liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())
+      
 
 
       pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
@@ -353,18 +358,17 @@ elif add_selectbox == 'Analyse Excel':
       col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
       col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1) )
       col4.metric("Vol. de Vente moy/ mois ", f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}' )
-    with st.expander("afficher les données "):
+    with st.expander("afficher le tableau "):
       st.write(df_numerique)
-    
-    result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy, liste_pays],
+
+    scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
+    result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy,scores_vol_vente_mensuel, liste_pays, liste_vol_vente_mensuel],
                           columns=(list_nom_produit),
-                          index=['score competition','Score demande','JS Score Moyen', 'Liste de pays '])
-
+                          index=['score competition','Score demande','JS Score Moyen','Score vol vente /M','Liste de pays ','Vol. de vente Mensuel'])
+    result = result.T
+    result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
   
-  st.write(result.T)
-
-      
-
+  st.write(result)
 # 5e pages 'Analyse de groupe'
 elif add_selectbox == 'Analyse de groupe':
   files =st.file_uploader('Choose files ', accept_multiple_files=True)
