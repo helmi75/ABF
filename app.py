@@ -322,7 +322,10 @@ elif add_selectbox == 'Analyse Excel':
   liste_score_JS_moy = []
   list_nom_produit = []
   liste_pays=[]
-  
+  liste_vol_vente_mensuel = []
+  liste_score_vol_vente_mensuel=[]
+
+
   for xl_name in excel_file:
     #st.write(xl_name)
     #st.write(excel_file[xl_name])  
@@ -330,20 +333,21 @@ elif add_selectbox == 'Analyse Excel':
     df = encodage_level_alphabet(excel_file[xl_name])    
     df_numerique = encodage_level_numerique(df)
     df_numerique, filtre = nan_cleaning(df_numerique)
-
+    
     def deciamle(x):
       return millify (x, precision=2)
     
     
     
     
+
     
     if filtre.count(True) !=0 :
       list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
       list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
       liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
       list_nom_produit.append(xl_name)
-
+      liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())
 
       pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
       st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
@@ -355,11 +359,13 @@ elif add_selectbox == 'Analyse Excel':
       col4.metric("Vol. de Vente moy/ mois ", f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}' )
     with st.expander("afficher les données "):
       st.write(df_numerique)
-    
-    result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy, liste_pays],
-                          columns=(list_nom_produit),
-                          index=['score competition','Score demande','JS Score Moyen', 'Liste de pays '])
 
+    scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
+    result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy, scores_vol_vente_mensuel, liste_pays, liste_vol_vente_mensuel],
+                           columns=(list_nom_produit),
+                           index=['score competition','Score demande','JS Score Moyen','Score vol vente /M','Liste de pays ','Vol. de vente Mensuel'])
+    result = result.T
+    result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
   
   st.write(result.T)
 
