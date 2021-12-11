@@ -333,13 +333,14 @@ elif add_selectbox == 'Analyse Excel':
     df = encodage_level_alphabet(excel_file[xl_name])    
     df_numerique = encodage_level_numerique(df)
     df_numerique, filtre = nan_cleaning(df_numerique)
-
+    
     def deciamle(x):
       return millify (x, precision=2)
     
     
     
     
+
     
     if filtre.count(True) !=0 :
       list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
