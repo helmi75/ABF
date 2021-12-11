@@ -12,7 +12,6 @@ from millify import millify
 sns.set()
 
 
-
 try:
    rapid_key =secret.get_key()
 except ModuleNotFoundError:
@@ -33,10 +32,10 @@ nbr_pages = 2
 
 
 add_selectbox = st.sidebar.selectbox('Faire votre choix ',
-                                      ('Chrome jungle Zboub',
-                                      'Api Jungule Zboub',
+                                      ('Analyse Excel',
                                       'Comparer plusiseurs produits',
-                                      'Analyse Excel',
+                                      'Chrome jungle Zboub',
+                                      'Api Jungule Zboub',
                                       'Analyse de groupe'
                                       ))
 
@@ -212,8 +211,7 @@ elif add_selectbox == 'Comparer plusiseurs produits':
       values_LQS  = dict_niche[nom_file]['LQS'].value_counts().sort_index().values      
 
         
-
-      
+            
       
 
       # from french datas 
@@ -317,6 +315,8 @@ elif add_selectbox == 'Analyse Excel':
   uploaded_file = st.file_uploader("Choose a file") 
   excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)   
 
+  premier_contener=  st.container()
+  
 
   list_score_demande = []
   list_score_competition = []
@@ -335,32 +335,42 @@ elif add_selectbox == 'Analyse Excel':
     df_numerique, filtre = nan_cleaning(df_numerique)
     
     def deciamle(x):
-      return millify (x, precision=2)
-    
-    
-    
-    
+      return millify (x, precision=2)   
 
-    
-    if filtre.count(True) !=0 :
-      list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
-      list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
-      liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
-      list_nom_produit.append(xl_name)
-      liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())
-      
-
-
-      pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
-      st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
-      liste_pays.append('  ,  '.join(list(pays_choisi[filtre])))
-      col1, col2, col3, col4 = st.columns(4)
-      col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
-      col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
-      col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1) )
-      col4.metric("Vol. de Vente moy/ mois ", f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}' )
     with st.expander("afficher le tableau "):
-      st.write(df_numerique)
+      if filtre.count(True) !=0 :
+        list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
+        list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
+        liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
+        list_nom_produit.append(xl_name)
+        liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())
+        
+
+
+        pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
+        st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
+        liste_pays.append('  ,  '.join(list(pays_choisi[filtre])))
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
+        col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
+        col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1) )
+        col4.metric("Vol. de Vente moy/ mois ", f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}' )
+      
+        st.write(df_numerique)
+
+        col11, col12 = st.columns(2)
+        fig, ax1 = plt.subplots(1,1)
+        labels_pays = df_numerique['Pays']
+        values_vol_vente  = df_numerique['Vol. de vente Mensuel'].sort_index().values 
+        ax1.pie(values_vol_vente ,  labels=labels_pays, autopct='%1.1f%%',)    
+        ax1.set_title( 'Volume de vente ' ,size=20)
+        col12.pyplot(fig) 
+
+
+        df_numerique
+        
+
+        
 
     scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
     result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy,scores_vol_vente_mensuel, liste_pays, liste_vol_vente_mensuel],
@@ -368,8 +378,24 @@ elif add_selectbox == 'Analyse Excel':
                           index=['score competition','Score demande','JS Score Moyen','Score vol vente /M','Liste de pays ','Vol. de vente Mensuel'])
     result = result.T
     result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
+    result_score = result[['score competition','Score demande','JS Score Moyen','Score vol vente /M']]
+    for elm in result_score.columns:
+      result_score[elm] = result_score[elm].apply(lambda x : float(x))
+    result_score_mean = result_score.mean(axis=1)
+
   
-  st.write(result)
+
+  col11, col12 = st.columns(2)
+  
+  with premier_contener :  
+    st.header("Classements produits")   
+    fig , ax = plt.subplots(1,1, figsize=(12,7))
+    plt.xticks(rotation = 90)
+    sns.barplot( result_score_mean.index, result_score_mean.sort_values(ascending= False).values)
+    premier_contener.pyplot(fig)
+    premier_contener.write(result_score_mean)    
+  
+    st.dataframe(result)
 # 5e pages 'Analyse de groupe'
 elif add_selectbox == 'Analyse de groupe':
   files =st.file_uploader('Choose files ', accept_multiple_files=True)
