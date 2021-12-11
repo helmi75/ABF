@@ -12,7 +12,7 @@ from millify import millify
 sns.set()
 
 
-"test"
+
 try:
    rapid_key =secret.get_key()
 except ModuleNotFoundError:
