@@ -1,0 +1,1386 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://192.168.0.43:8501
+  External URL: http://91.167.181.110:8501
+
+2021-12-28 12:14:16.360 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2021-12-28 12:14:17.518 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-28 12:25:37.354 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-28 12:26:22.551 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 296, in <module>
+    sns.distplot(dict_niche[files[2].name[14:-4]]['Évaluation'],bins=10, label=files[2].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-28 12:26:32.078 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-28 12:26:39.184 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'LQS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 207, in <module>
+    dict_niche[nom_file] = preprocessing(dict_niche[nom_file].iloc[:,3:], langue)
+  File "/home/anisse9/amazon_FBA/ABF/features.py", line 114, in preprocessing
+    df["LQS"] = df["LQS"].replace('...', np.nan)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/frame.py", line 3455, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'LQS'
+
+2021-12-28 12:30:38.228 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 07:46:59.695 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2021-12-29 07:47:07.014 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+2021-12-29 07:54:34.454 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 184, in <module>
+    st.pyplot(fig3)
+NameError: name 'fig3' is not defined
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 07:55:24.425 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Reviews'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 282, in <module>
+    median_avis.append(dict_niche[nom_file]['Reviews'].median())
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/frame.py", line 3455, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Reviews'
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 08:00:28.007 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Reviews'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 282, in <module>
+    median_avis.append(dict_niche[nom_file]['Reviews'].median())
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/frame.py", line 3455, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Reviews'
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 08:01:17.725 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Reviews'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 282, in <module>
+    median_avis.append(dict_niche[nom_file]['Reviews'].median())
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/frame.py", line 3455, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Reviews'
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 08:01:37.576 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 08:04:00.194 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 08:11:07.522 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+2021-12-29 08:25:54.627 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+2021-12-29 08:26:19.849 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2021-12-29 08:35:13.864 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 09:37:39.474 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2021-12-29 09:37:45.596 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 09:50:34.095 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+2021-12-29 09:51:10.544 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 09:53:41.858 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 09:54:06.475 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 460, in <module>
+    variation_x= st.slider('zoom du classement', min_value=0, max_value= int(df['Classement'].max()), value=int(df['Classement'].quantile(1)))
+ValueError: cannot convert float NaN to integer
+
+2021-12-29 09:54:14.638 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 09:54:30.447 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 09:54:45.626 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 10:24:40.879 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+2021-12-29 10:25:12.038 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2021-12-29 10:30:52.755 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1195, in __init__
+    raise ValueError(
+ValueError: Excel file format cannot be determined, you must specify an engine manually.
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 10:33:17.376 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 10:33:32.262 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 296, in <module>
+    sns.distplot(dict_niche[files[2].name[14:-4]]['Évaluation'],bins=10, label=files[2].name[14:-4])
+IndexError: list index out of range
+
+2021-12-29 18:44:36.348 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 19:04:56.204 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    df = pd.concat(list_niche)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 294, in concat
+    op = _Concatenator(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 351, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2021-12-29 19:12:22.423 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2021-12-29 19:39:10.775 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-01 15:16:09.854 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-01 15:18:01.378 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-01 15:31:54.319 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://192.168.0.43:8501
+  External URL: http://91.167.181.110:8501
+
+2022-01-01 16:57:42.484 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-01 16:57:43.376 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/features.py:145: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date First Available'] = pd.to_datetime(df['Date First Available'])
+2022-01-01 16:58:00.084 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 184, in <module>
+    st.pyplot(fig3)
+NameError: name 'fig3' is not defined
+
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2022-01-01 17:10:45.737 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 295, in <module>
+    sns.distplot(dict_niche[files[1].name[14:-4]]['Évaluation'],bins=10, label=files[1].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2022-01-01 17:11:07.100 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 296, in <module>
+    sns.distplot(dict_niche[files[2].name[14:-4]]['Évaluation'],bins=10, label=files[2].name[14:-4])
+IndexError: list index out of range
+
+/home/anisse9/amazon_FBA/ABF/features.py:111: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['Date de première disponibilité'] = pd.to_datetime(df['Date de première disponibilité'])
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+2022-01-01 17:15:07.761 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 297, in <module>
+    sns.distplot(dict_niche[files[3].name[14:-4]]['Évaluation'],bins=10, label=files[3].name[14:-4])
+IndexError: list index out of range
+
+2022-01-01 21:46:51.816 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-02 11:55:45.797 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-02 16:45:02.310 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-02 16:53:37.527 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-02 18:24:32.737 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-03 10:37:31.140 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-03 19:57:51.290 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://192.168.0.43:8501
+  External URL: http://91.167.181.110:8501
+
+2022-01-05 11:20:01.397 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-05 11:22:34.979 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-05 11:41:37.061 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 316, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:383: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
