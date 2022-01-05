@@ -398,15 +398,19 @@ elif add_selectbox == 'Analyse Excel':
                                   ])
     result = result.T
     
-    #score_selection = st.multiselect(label='add scores', result)
+    
     
 
 
     result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
-    result_score = result[['score competition','Score demande','JS Score Moyen','Score vol vente /M']]
+    result_score = result[['score competition',
+                           'Score demande',
+                           'JS Score Moyen',
+                           'Score vol vente /M']] # ajouter automatiquement 
+
     for elm in result_score.columns:
       result_score[elm] = result_score[elm].apply(lambda x : float(x))
-    result_score_mean = result_score.mean(axis=1)
+    result_score_mean = result_score.mean(axis=1).sort_values(ascending=False)
 
   with dexiemme_contener :      
       score_selection = st.multiselect(label='add scores', options=result_score.columns)
@@ -419,7 +423,8 @@ elif add_selectbox == 'Analyse Excel':
     st.header("Classements produits")   
     fig , ax = plt.subplots(1,1, figsize=(12,7))
     plt.xticks(rotation = 90)
-    sns.barplot( result_score_mean.index, result_score_mean.sort_values(ascending= False).values)
+    
+    sns.barplot( result_score_mean.index, result_score_mean.values)
     premier_contener.pyplot(fig)
     premier_contener.write(result_score_mean)    
   
