@@ -12,15 +12,10 @@ from millify import millify
 sns.set()
 
 
-#testpushing
-
-
 try:
    rapid_key =secret.get_key()
 except ModuleNotFoundError:
    print('nous avons pas pu  var_env error')
-
-
 
 
 # configuration 
@@ -318,16 +313,22 @@ elif add_selectbox == 'Analyse Excel':
   uploaded_file = st.file_uploader("Choose a file") 
   excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)   
 
-  premier_contener=  st.container()
+  dexiemme_contener = st.container()
+  premier_contener = st.container() 
   
 
   list_score_demande = []
   list_score_competition = []
   liste_score_JS_moy = []
   list_nom_produit = []
-  liste_pays=[]
+  liste_pays = []
   liste_vol_vente_mensuel = []
-  liste_score_vol_vente_mensuel=[]
+  liste_score_vol_vente_mensuel = []
+
+  # new scoring 
+  liste_score_pays = []
+  liste_score_saisonalite = []
+  liste_score__vol_vente_mensuel =[]
   
   for xl_name in excel_file:
     #st.write(xl_name)
@@ -346,13 +347,16 @@ elif add_selectbox == 'Analyse Excel':
         list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
         liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
         list_nom_produit.append(xl_name)
-        liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())
-        
+        liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())       
 
 
         pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
+
         st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
         liste_pays.append('  ,  '.join(list(pays_choisi[filtre])))
+        liste_score_pays.append(len(pays_choisi[filtre]))
+        
+
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
         col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
@@ -371,22 +375,43 @@ elif add_selectbox == 'Analyse Excel':
 
 
         df_numerique
-        
-
-        
+    
+    # norbert = result['Liste de pays '].str.split(',').apply(lambda x: len(x))
+    
 
     scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
-    result = pd.DataFrame([list_score_competition, list_score_demande, liste_score_JS_moy,scores_vol_vente_mensuel, liste_pays, liste_vol_vente_mensuel],
-                          columns=(list_nom_produit),
-                          index=['score competition','Score demande','JS Score Moyen','Score vol vente /M','Liste de pays ','Vol. de vente Mensuel'])
+    result = pd.DataFrame([list_score_competition, 
+                           list_score_demande,
+                           liste_score_JS_moy,
+                           scores_vol_vente_mensuel,
+                           liste_score_pays,
+                           liste_pays,
+                           liste_vol_vente_mensuel],                         
+                           columns=(list_nom_produit),
+                           index=['score competition',
+                                  'Score demande',
+                                  'JS Score Moyen',
+                                  'Score vol vente /M',
+                                  'Score pays',
+                                  'Liste de pays ',
+                                  'Vol. de vente Mensuel'                                  
+                                  ])
     result = result.T
+    
+    #score_selection = st.multiselect(label='add scores', result)
+    
+
+
     result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
     result_score = result[['score competition','Score demande','JS Score Moyen','Score vol vente /M']]
     for elm in result_score.columns:
       result_score[elm] = result_score[elm].apply(lambda x : float(x))
     result_score_mean = result_score.mean(axis=1)
 
-  
+  with dexiemme_contener :      
+      score_selection = st.multiselect(label='add scores', options=result_score.columns)
+      
+      
 
   col11, col12 = st.columns(2)
   

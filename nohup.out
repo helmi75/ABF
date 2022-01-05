@@ -1384,3 +1384,414 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   result_score[elm] = result_score[elm].apply(lambda x : float(x))
 /home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
   warnings.warn(
+2022-01-05 11:51:43.197 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:386: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-05 12:06:59.545 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-05 12:07:12.254 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:386: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df = df.iloc[:,3:]
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-05 13:07:56.345 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+2022-01-05 13:11:27.134 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 412, in <module>
+    st.dataframe(esult_score_mean)
+NameError: name 'esult_score_mean' is not defined
+
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:407: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score_mean = result_score.mean(axis=1)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score_mean = result_score.mean(axis=1)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score_mean = result_score.mean(axis=1)
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score_mean = result_score.mean(axis=1)
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score_mean = result_score.mean(axis=1)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-05 15:50:03.967 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+2022-01-05 15:56:46.983 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1191, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format
+    with get_handle(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 608, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/io/common.py", line 395, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'NoneType'>
+
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:413: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-05 16:14:27.133 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 394, in <module>
+    liste_score_pays],
+NameError: name 'liste_score_pays' is not defined
+
+2022-01-05 16:14:44.039 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 394, in <module>
+    liste_score_pays],
+NameError: name 'liste_score_pays' is not defined
+
+2022-01-05 16:15:01.409 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 394, in <module>
+    liste_score_pays],
+NameError: name 'liste_score_pays' is not defined
+
+2022-01-05 16:15:58.051 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 395, in <module>
+    liste_score_pays],
+NameError: name 'liste_score_pays' is not defined
+
+/home/anisse9/amazon_FBA/ABF/app.py:412: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  for elm in result_score.columns:
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result = result.T
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result = result.T
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result = result.T
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result = result.T
+2022-01-05 16:29:35.608 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 546, in _get_axis_number
+    return cls._AXIS_TO_AXIS_NUMBER[axis]
+KeyError: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.9/site-packages/streamlit/script_runner.py", line 350, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon_FBA/ABF/app.py", line 409, in <module>
+    st.write(result['Liste de pays '].str.split(',').sum(axis=1))
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 10708, in sum
+    return NDFrame.sum(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 10446, in sum
+    return self._min_count_stat_function(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 10428, in _min_count_stat_function
+    return self._reduce(
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/series.py", line 4379, in _reduce
+    self._get_axis_number(axis)
+  File "/home/anisse9/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 548, in _get_axis_number
+    raise ValueError(f"No axis named {axis} for object type {cls.__name__}")
+ValueError: No axis named 1 for object type Series
+
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:404: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  score_selection = st.multiselect(label='add scores', options=result_score.columns)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/home/anisse9/amazon_FBA/ABF/app.py:408: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  score_selection = st.multiselect(label='add scores', options=result_score.columns)
+/home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
