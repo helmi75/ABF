@@ -4,6 +4,8 @@ import streamlit as st
 import json
 import pandas as pd 
 import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go
 import io
 import os
 from secret import secret   
@@ -310,7 +312,7 @@ elif add_selectbox == 'Comparer plusiseurs produits':
     st.pyplot(fig7)
 # 4e pages 'Analyse Excel'
 elif add_selectbox == 'Analyse Excel':
-  uploaded_file = st.file_uploader("Choose a file") 
+  uploaded_file = st.file_uploader("Excel product data ") 
   excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)   
 
   dexiemme_contener = st.container()
@@ -326,9 +328,12 @@ elif add_selectbox == 'Analyse Excel':
   liste_score_vol_vente_mensuel = []
 
   # new scoring 
-  liste_score_pays = []
-  liste_score_saisonalite = []
-  liste_score__vol_vente_mensuel =[]
+  liste_score_pays = []# OK  
+  liste_score__vol_vente_mensuel =[] #OK
+  liste_score_coef =[] # next work 
+  liste_score_saisonalite = [] 
+
+
   
   for xl_name in excel_file:
     #st.write(xl_name)
@@ -374,7 +379,22 @@ elif add_selectbox == 'Analyse Excel':
         ax1.set_title( 'Volume de vente ' ,size=20)
         col12.pyplot(fig)
 
-        df_numerique
+        #fig1, ax2 = plt.subplots()
+        df_saison = df_numerique.set_index('Pays').iloc[:,-12:].T
+       
+        #st.dataframe(df_saison.T)
+        fig1=go.Figure()
+        for elm in df_saison.columns:        
+          fig1.add_trace(go.Scatter(x= df_saison[elm].index, 
+                                 y= df_saison[elm],
+                                 mode='lines+markers',
+                                 name=elm,
+                                ))
+        fig1.update_layout(title_text='Demande mensuelle',  title_x=0.5)       
+        st.plotly_chart(fig1)
+        
+
+        
     
     
     
