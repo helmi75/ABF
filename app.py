@@ -360,8 +360,9 @@ elif add_selectbox == 'Analyse Excel':
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
         col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
-        col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1) )
-        col4.metric("Vol. de Vente moy/ mois ", f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}' )
+        col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1))
+        col4.metric("Vol. de Vente moy/ mois ",
+                    f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}')
       
         st.write(df_numerique)
 
@@ -369,51 +370,61 @@ elif add_selectbox == 'Analyse Excel':
         fig, ax1 = plt.subplots(1,1)
         labels_pays = df_numerique['Pays']
         values_vol_vente  = df_numerique['Vol. de vente Mensuel'].sort_index().values 
-        ax1.pie(values_vol_vente ,  labels=labels_pays, autopct='%1.1f%%',)    
+        ax1.pie(values_vol_vente ,  labels=labels_pays, autopct='%1.1f%%')    
         ax1.set_title( 'Volume de vente ' ,size=20)
-        col12.pyplot(fig) 
-
+        col12.pyplot(fig)
 
         df_numerique
     
-    # norbert = result['Liste de pays '].str.split(',').apply(lambda x: len(x))
+    
     
 
     scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
-    result = pd.DataFrame([list_score_competition, 
-                           list_score_demande,
-                           liste_score_JS_moy,
-                           scores_vol_vente_mensuel,
-                           liste_score_pays,
-                           liste_pays,
-                           liste_vol_vente_mensuel],                         
-                           columns=(list_nom_produit),
-                           index=['score competition',
-                                  'Score demande',
-                                  'JS Score Moyen',
-                                  'Score vol vente /M',
-                                  'Score pays',
-                                  'Liste de pays ',
-                                  'Vol. de vente Mensuel'                                  
-                                  ])
-    result = result.T
-    
-    
+    score_pays = []
+    for score in liste_score_pays :
+        score_pays.append(millify (score/max(liste_score_pays)*9, precision=2))
+
     
 
+  result = pd.DataFrame([list_score_competition, 
+                          list_score_demande,
+                          liste_score_JS_moy,
+                          scores_vol_vente_mensuel,
+                          score_pays,
+                          liste_pays,
+                          liste_vol_vente_mensuel],                         
+                          columns=(list_nom_produit),
+                          index=['Score competition',
+                                'Score demande',
+                                'JS Score Moyen',
+                                'Score vol vente /M',
+                                'Score pays',
+                                'Liste de pays ',
+                                'Vol. de vente Mensuel'                                  
+                                ])
+  result = result.T
+  
+  result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
 
-    result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
-    result_score = result[['score competition',
-                           'Score demande',
-                           'JS Score Moyen',
-                           'Score vol vente /M']] # ajouter automatiquement 
+  with dexiemme_contener :  
+      option = ['Score competition', 'Score demande', 'JS Score Moyen', 
+                'Score vol vente /M','Score pays'
+                ]    
 
-    for elm in result_score.columns:
-      result_score[elm] = result_score[elm].apply(lambda x : float(x))
-    result_score_mean = result_score.mean(axis=1).sort_values(ascending=False)
+      score_selection = st.multiselect(label='Strategie', 
+                                       options=option ,
+                                       default=['Score competition', 'Score demande', 'JS Score Moyen', 
+                                                'Score vol vente /M','Score pays'] )
+      
 
-  with dexiemme_contener :      
-      score_selection = st.multiselect(label='add scores', options=result_score.columns)
+  result_score = result[score_selection] # ajouter automatiquement 
+  
+
+  for elm in result_score.columns:
+    result_score[elm] = result_score[elm].apply(lambda x : float(x))
+  result_score_mean = result_score.mean(axis=1).sort_values(ascending=False)
+
+  
       
       
 
