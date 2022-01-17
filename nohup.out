@@ -1384,3 +1384,133 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   result_score[elm] = result_score[elm].apply(lambda x : float(x))
 /home/anisse9/.local/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
   warnings.warn(
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://10.132.0.2:8502
+  External URL: http://35.205.238.35:8502
+
+2022-01-16 21:21:33.955 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1071, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 947, in inspect_excel_format
+    assert content_or_path is not None
+AssertionError
+
+2022-01-16 21:21:55.082 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1102, in __init__
+    raise ValueError(
+ValueError: Your version of xlrd is 2.0.1. In xlrd >= 2.0, only the xls format is supported. Install openpyxl instead.
+
+2022-01-16 21:22:00.534 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1102, in __init__
+    raise ValueError(
+ValueError: Your version of xlrd is 2.0.1. In xlrd >= 2.0, only the xls format is supported. Install openpyxl instead.
+
+2022-01-16 21:22:04.427 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1102, in __init__
+    raise ValueError(
+ValueError: Your version of xlrd is 2.0.1. In xlrd >= 2.0, only the xls format is supported. Install openpyxl instead.
+
+/home/anisse9/amazon/ABF/app.py:386: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  result_score[elm] = result_score[elm].apply(lambda x : float(x))
+/home/anisse9/amazon/ABF/app.py:365: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  fig, ax1 = plt.subplots(1,1)
+/home/anisse9/.local/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+2022-01-17 12:39:26.906 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1071, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 947, in inspect_excel_format
+    assert content_or_path is not None
+AssertionError
+
+2022-01-17 12:44:17.547 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1071, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 947, in inspect_excel_format
+    assert content_or_path is not None
+AssertionError
+
+2022-01-17 12:57:14.615 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1071, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 947, in inspect_excel_format
+    assert content_or_path is not None
+AssertionError
+
+2022-01-17 13:04:25.486 Traceback (most recent call last):
+  File "/home/anisse9/.local/lib/python3.8/site-packages/streamlit/script_runner.py", line 379, in _run_script
+    exec(code, module.__dict__)
+  File "/home/anisse9/amazon/ABF/app.py", line 319, in <module>
+    excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 299, in wrapper
+    return func(*args, **kwargs)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 336, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 1071, in __init__
+    ext = inspect_excel_format(
+  File "/home/anisse9/.local/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 947, in inspect_excel_format
+    assert content_or_path is not None
+AssertionError
+
