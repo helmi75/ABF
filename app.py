@@ -122,18 +122,21 @@ elif add_selectbox == 'Chrome jungle Zboub':
 
 
       fig2, (ax3, ax4)  = plt.subplots(1,2,figsize=(12,10))
-      df_prix_q075 =  df['Prix'][df['Prix']< df ['Prix'].quantile(0.75)]
+      df_prix_q075 =  df['Prix'][df['Prix']<df['Prix'].quantile(0.75)]
       ax3.boxplot(df_prix_q075 )
       ax3.set_title(f'\n Prix median {df_prix_q075.median()}€' ,size =20)
 
-      df_Revenus_mensuels_q075 =  df['Revenus mensuels'][df['Revenus mensuels']< df ['Revenus mensuels'].quantile(0.75)]    
+      df_Revenus_mensuels_q075 =  df['Revenus mensuels'][df['Revenus mensuels']<df['Revenus mensuels'].quantile(0.75)]    
+      st.dataframe(df['Revenus mensuels'])
+      st.write(df['Revenus mensuels'].quantile(0.75))
       ax4.boxplot(df_Revenus_mensuels_q075)
       ax4.set_title(f'Revenue median {df_Revenus_mensuels_q075.median()}€',size =20)
 
 
       
-      labels_revenu = df['Revenus segementé'].value_counts().sort_index().index
+      labels_revenu = df['Revenus segementé'].value_counts().index
       values_revenu  = df['Revenus segementé'].value_counts().values   
+            
 
       fig3, ax5  = plt.subplots(1,1,figsize=(12,5))  
              
