@@ -8,17 +8,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 import io
 import os
-from secret import secret   
 from millify import millify 
-from millify import millify
 sns.set()
 
 
 try:
-   rapid_key =secret.get_key()
+   rapid_key ="f2b69e8ab2mshc6b37f3259eace5p104495jsnc2a8ef50efc6"
 except ModuleNotFoundError:
    print('nous avons pas pu  var_env error')
-
 
 # configuration 
 url = "https://parazun-amazon-data.p.rapidapi.com/search/"
@@ -32,18 +29,19 @@ nbr_pages = 2
 
 
 add_selectbox = st.sidebar.selectbox('Faire votre choix ',
-                                      ('Analyse Excel',
+                                      ('Api Jungule Zboub',
                                       'Comparer plusiseurs produits',
                                       'Chrome jungle Zboub',
-                                      'Api Jungule Zboub',
-                                      'Analyse de groupe'
-                                      ))
+                                      'Analyse de groupe',
+                                      'Analyse Excel'))
 
 st.title('Jungle Zboub')
+
 couleurs = ['#D56149','#49B5D5','yellow','green']#,'gray','pink','orange']  
 # Premère page 'Api Jungule Zboub'
 if  (add_selectbox == 'Api Jungule Zboub'):
-  search  = st.text_input('entrer un nom de produit')
+  st.markdown("### Price decision tool ")
+  search  = st.text_input('enter a product name from Amazon website')
   if search :
     dict_reponse = scap_data(search, list_pays ,nbr_pages ,url ,headers)
     list_concat =[]
@@ -315,86 +313,79 @@ elif add_selectbox == 'Comparer plusiseurs produits':
     st.pyplot(fig7)
 # 4e pages 'Analyse Excel'
 elif add_selectbox == 'Analyse Excel':
+  st.markdown("### Analysis of data from an Excel file\n - download the sample file from this link\n -  ")
   uploaded_file = st.file_uploader("Excel product data ") 
-  excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None)   
+  #excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None) 
+  excel_file = pd.read_csv(uploaded_file)  
+  if excel_file:
+    dexiemme_contener = st.container()
+    premier_contener = st.container() 
+    list_score_demande = []
+    list_score_competition = []
+    liste_score_JS_moy = []
+    list_nom_produit = []
+    liste_pays = []
+    liste_vol_vente_mensuel = []
+    liste_score_vol_vente_mensuel = []
 
-  dexiemme_contener = st.container()
-  premier_contener = st.container() 
-  
+    # new scoring 
+    liste_score_pays = []# OK  
+    liste_score__vol_vente_mensuel =[] #OK
+    liste_score_coef =[] # next work 
+    liste_score_saisonalite = [] 
+    for xl_name in excel_file:
+      #st.write(xl_name)
+      #st.write(excel_file[xl_name])  
+      st.header(xl_name)
+      df = encodage_level_alphabet(excel_file[xl_name])    
+      df_numerique = encodage_level_numerique(df)
+      df_numerique, filtre = nan_cleaning(df_numerique)
+      def deciamle(x):
+        return millify (x, precision=2)   
 
-  list_score_demande = []
-  list_score_competition = []
-  liste_score_JS_moy = []
-  list_nom_produit = []
-  liste_pays = []
-  liste_vol_vente_mensuel = []
-  liste_score_vol_vente_mensuel = []
-
-  # new scoring 
-  liste_score_pays = []# OK  
-  liste_score__vol_vente_mensuel =[] #OK
-  liste_score_coef =[] # next work 
-  liste_score_saisonalite = [] 
-
-
-  
-  for xl_name in excel_file:
-    #st.write(xl_name)
-    #st.write(excel_file[xl_name])  
-    st.header(xl_name)
-    df = encodage_level_alphabet(excel_file[xl_name])    
-    df_numerique = encodage_level_numerique(df)
-    df_numerique, filtre = nan_cleaning(df_numerique)
-    
-    def deciamle(x):
-      return millify (x, precision=2)   
-
-    with st.expander("afficher le tableau "):
-      if filtre.count(True) !=0 :
-        list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
-        list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
-        liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
-        list_nom_produit.append(xl_name)
-        liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())       
-
-
-        pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
-
-        st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
-        liste_pays.append('  ,  '.join(list(pays_choisi[filtre])))
-        liste_score_pays.append(len(pays_choisi[filtre]))
+      with st.expander("afficher le tableau "):
+        if filtre.count(True) !=0 :
+          list_score_demande.append(deciamle(df_numerique['DEMANDE'].mean()))
+          list_score_competition.append(deciamle(df_numerique['COMPETITION'].mean()))
+          liste_score_JS_moy.append(deciamle(df_numerique['SCORE '].mean()))
+          list_nom_produit.append(xl_name)
+          liste_vol_vente_mensuel.append(df_numerique["Vol. de vente Mensuel"].sum())       
+          pays_choisi = excel_file[xl_name]['Pays'].apply(lambda x : x.upper())
+          st.write("**Chiffre basé sur les Marketplaces**:  ",'  ,  '.join(list(pays_choisi[filtre])))
+          liste_pays.append('  ,  '.join(list(pays_choisi[filtre])))
+          liste_score_pays.append(len(pays_choisi[filtre]))
         
 
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
-        col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
-        col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1))
-        col4.metric("Vol. de Vente moy/ mois ",
+          col1, col2, col3, col4 = st.columns(4)
+          col1.metric("Demand Score ", f'{millify (df_numerique["DEMANDE"].mean(axis=0))}')
+          col2.metric("Score compet",  f'{millify (df_numerique["COMPETITION"].mean(axis=0))}')
+          col3.metric("Score JS", millify (df_numerique["SCORE "].mean(axis=0), precision=1))
+          col4.metric("Vol. de Vente moy/ mois ",
                     f'{millify (df_numerique["Vol. de vente Mensuel"].sum(), precision =3)}')
       
-        st.write(df_numerique)
+          st.write(df_numerique)
 
-        col11, col12 = st.columns(2)
-        fig, ax1 = plt.subplots(1,1)
-        labels_pays = df_numerique['Pays']
-        values_vol_vente  = df_numerique['Vol. de vente Mensuel'].sort_index().values 
-        ax1.pie(values_vol_vente ,  labels=labels_pays, autopct='%1.1f%%')    
-        ax1.set_title( 'Volume de vente ' ,size=20)
-        col12.pyplot(fig)
+          col11, col12 = st.columns(2)
+          fig, ax1 = plt.subplots(1,1)
+          labels_pays = df_numerique['Pays']
+          values_vol_vente  = df_numerique['Vol. de vente Mensuel'].sort_index().values 
+          ax1.pie(values_vol_vente ,  labels=labels_pays, autopct='%1.1f%%')    
+          ax1.set_title( 'Volume de vente ' ,size=20)
+          col12.pyplot(fig)
 
-        #fig1, ax2 = plt.subplots()
-        df_saison = df_numerique.set_index('Pays').iloc[:,-12:].T
+          #fig1, ax2 = plt.subplots()
+          df_saison = df_numerique.set_index('Pays').iloc[:,-12:].T
        
-        #st.dataframe(df_saison.T)
-        fig1=go.Figure()
-        for elm in df_saison.columns:        
-          fig1.add_trace(go.Scatter(x= df_saison[elm].index, 
+          #st.dataframe(df_saison.T)
+          fig1=go.Figure()
+          for elm in df_saison.columns:        
+            fig1.add_trace(go.Scatter(x= df_saison[elm].index, 
                                  y= df_saison[elm],
                                  mode='lines+markers',
                                  name=elm,
                                 ))
-        fig1.update_layout(title_text='Demande mensuelle',  title_x=0.5)       
-        st.plotly_chart(fig1)
+            fig1.update_layout(title_text='Demande mensuelle',  title_x=0.5)       
+            st.plotly_chart(fig1)
         
 
         
@@ -402,14 +393,14 @@ elif add_selectbox == 'Analyse Excel':
     
     
 
-    scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
-    score_pays = []
-    for score in liste_score_pays :
-        score_pays.append(millify (score/max(liste_score_pays)*9, precision=2))
+      scores_vol_vente_mensuel =  liste_vol_vente_mensuel/max(liste_vol_vente_mensuel)*9
+      score_pays = []
+      for score in liste_score_pays :
+          score_pays.append(millify (score/max(liste_score_pays)*9, precision=2))
 
     
 
-  result = pd.DataFrame([list_score_competition, 
+    result = pd.DataFrame([list_score_competition, 
                           list_score_demande,
                           liste_score_JS_moy,
                           scores_vol_vente_mensuel,
@@ -425,108 +416,109 @@ elif add_selectbox == 'Analyse Excel':
                                 'Liste de pays ',
                                 'Vol. de vente Mensuel'                                  
                                 ])
-  result = result.T
+    result = result.T
   
-  result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
+    result['Score vol vente /M'] = result['Score vol vente /M'].apply(lambda x : millify (x, precision=2))
 
-  with dexiemme_contener :  
-      option = ['Score competition', 'Score demande', 'JS Score Moyen', 
+    with dexiemme_contener :  
+        option = ['Score competition', 'Score demande', 'JS Score Moyen', 
                 'Score vol vente /M','Score pays'
                 ]    
 
-      score_selection = st.multiselect(label='Strategie', 
+        score_selection = st.multiselect(label='Strategie', 
                                        options=option ,
                                        default=['Score competition', 'Score demande', 'JS Score Moyen', 
                                                 'Score vol vente /M','Score pays'] )
       
 
-  result_score = result[score_selection] # ajouter automatiquement 
+    result_score = result[score_selection] # ajouter automatiquement 
   
 
-  for elm in result_score.columns:
-    result_score[elm] = result_score[elm].apply(lambda x : float(x))
-  result_score_mean = result_score.mean(axis=1).sort_values(ascending=False)
+    for elm in result_score.columns:
+      result_score[elm] = result_score[elm].apply(lambda x : float(x))
+    result_score_mean = result_score.mean(axis=1).sort_values(ascending=False)
 
   
       
       
 
-  col11, col12 = st.columns(2)
+    col11, col12 = st.columns(2)
   
-  with premier_contener :  
-    st.header("Classements produits")   
-    fig , ax = plt.subplots(1,1, figsize=(12,7))
-    plt.xticks(rotation = 90)
+    with premier_contener :  
+      st.header("Classements produits")   
+      fig , ax = plt.subplots(1,1, figsize=(12,7))
+      plt.xticks(rotation = 90)
     
-    sns.barplot( result_score_mean.index, result_score_mean.values)
-    premier_contener.pyplot(fig)
-    premier_contener.write(result_score_mean)    
+      sns.barplot( result_score_mean.index, result_score_mean.values)
+      premier_contener.pyplot(fig)
+      premier_contener.write(result_score_mean)    
   
-    st.dataframe(result)
+      st.dataframe(result)
 # 5e pages 'Analyse de groupe'
 elif add_selectbox == 'Analyse de groupe':
   files =st.file_uploader('Choose files ', accept_multiple_files=True)
-  list_niche=[]
-  for elm in files:      
-    df = pd.read_csv(elm) 
-    df = df.iloc[:,3:]    
-    df = preprocessing(df, 'fr')       
-    list_niche.append(df)  
+  if files:
+    list_niche=[]
+    for elm in files:      
+      df = pd.read_csv(elm) 
+      df = df.iloc[:,3:]    
+      df = preprocessing(df, 'fr')       
+      list_niche.append(df)  
    
-  df = pd.concat(list_niche)
-  df = df[~df['Évaluation'].isna()]
-  df = df[~df['Honoraires'].isna()]
+    df = pd.concat(list_niche)
+    df = df[~df['Évaluation'].isna()]
+    df = df[~df['Honoraires'].isna()]
   
   
-  st.write(f'Nbr d individu à analyser {df.shape[0]}') 
-  # plot configuration 
-  fig1,(ax1, ax2, ax3) = plt.subplots(1,3,figsize=(20, 7))
+    st.write(f'Nbr d individu à analyser {df.shape[0]}') 
+    # plot configuration 
+    fig1,(ax1, ax2, ax3) = plt.subplots(1,3,figsize=(20, 7))
   
-  plt.xticks(rotation = 90)
+    plt.xticks(rotation = 90)
   
-  labels_LQS = df['LQS'].apply(lambda x : str(x)).value_counts().sort_index().index
-  values_LQS  = df['LQS'].value_counts().sort_index().values       
-  # Plot Pie of listing score 
-  ax1.pie(values_LQS ,  labels=labels_LQS, autopct='%1.1f%%', colors=couleurs, startangle=50)    
-  ax1.set_title( 'Lising' ,size=20)   
+    labels_LQS = df['LQS'].apply(lambda x : str(x)).value_counts().sort_index().index
+    values_LQS  = df['LQS'].value_counts().sort_index().values       
+    # Plot Pie of listing score 
+    ax1.pie(values_LQS ,  labels=labels_LQS, autopct='%1.1f%%', colors=couleurs, startangle=50)    
+    ax1.set_title( 'Lising' ,size=20)   
     
-  labels_revenu = df['Revenus segementé'].value_counts().sort_index().index
-  values_revenu  = df['Revenus segementé'].value_counts().values   
+    labels_revenu = df['Revenus segementé'].value_counts().sort_index().index
+    values_revenu  = df['Revenus segementé'].value_counts().values   
         
 
-  #plot pie of revenues 
-  ax2.pie(values_revenu, labels = labels_revenu ,autopct='%1.1f%%', colors=couleurs, startangle=50)
-  #sns.distplot(dict_niche[nom_file]['Revenus segementé'],bins=10)           
-  ax2.set_title( 'Revenus ' ,size =20)
+    #plot pie of revenues 
+    ax2.pie(values_revenu, labels = labels_revenu ,autopct='%1.1f%%', colors=couleurs, startangle=50)
+    # sns.distplot(dict_niche[nom_file]['Revenus segementé'],bins=10)           
+    ax2.set_title( 'Revenus ' ,size =20)
         
-  # Histograme of evaluation 
-  sns.distplot(df['Évaluation'], bins=10)
-  ax3.set_title( 'Notes', size=20) 
-  st.pyplot(fig1)
+    # Histograme of evaluation 
+    sns.distplot(df['Évaluation'], bins=10)
+    ax3.set_title( 'Notes', size=20) 
+    st.pyplot(fig1)
 
-  fig4, ax6  = plt.subplots(1,1,figsize=(12,5))      
-  sns.scatterplot( df['Classement'],df['Ventes mensuelles'], hue=df['Revenus segementé'])
-  ax6.set_xlim(0,20000)
-  ax6.set_title('Nbr de vente en fonction du classement ',size =20)
-  st.pyplot(fig4)
+    fig4, ax6  = plt.subplots(1,1,figsize=(12,5))      
+    sns.scatterplot( df['Classement'],df['Ventes mensuelles'], hue=df['Revenus segementé'])
+    ax6.set_xlim(0,20000)
+    ax6.set_title('Nbr de vente en fonction du classement ',size =20)
+    st.pyplot(fig4)
 
       
-  fig5, ax7  = plt.subplots(1,1,figsize=(12,5))      
-  sns.scatterplot(df['Ventes mensuelles'], df['Évaluation'], hue=df['Revenus segementé'])
-  ax7.set_title('influence du chiffre d affaire   M.vente(evalutation)',size =20)
-  st.pyplot(fig5)
+    fig5, ax7  = plt.subplots(1,1,figsize=(12,5))      
+    sns.scatterplot(df['Ventes mensuelles'], df['Évaluation'], hue=df['Revenus segementé'])
+    ax7.set_title('influence du chiffre d affaire   M.vente(evalutation)',size =20)
+    st.pyplot(fig5)
 
   
 
-  fig9, ax10  = plt.subplots(1,1,figsize=(12,5)) 
+    fig9, ax10  = plt.subplots(1,1,figsize=(12,5)) 
 
 
 
-  st.header('influence du chiffre d affaire avis(classement)')
-  sns.scatterplot( df['Classement'] ,df['Avis'], hue=df['Revenus segementé']) 
-  variation_x= st.slider('zoom du classement', min_value=0, max_value= int(df['Classement'].max()), value=int(df['Classement'].quantile(1)))
-  ax10.set_xlim(0,variation_x)
-  variation_y= st.slider('zoom de l\'avis', min_value=0, max_value= int(df['Avis'].max()), value=int(df['Avis'].quantile(1)))
-  ax10.set_ylim(-10,variation_y)
-  ax10.set_title('influence du chiffre d affaire avis(classement)',size =20)  
-  st.pyplot(fig9)
+    st.header('influence du chiffre d affaire avis(classement)')
+    sns.scatterplot( df['Classement'] ,df['Avis'], hue=df['Revenus segementé']) 
+    variation_x= st.slider('zoom du classement', min_value=0, max_value= int(df['Classement'].max()), value=int(df['Classement'].quantile(1)))
+    ax10.set_xlim(0,variation_x)
+    variation_y= st.slider('zoom de l\'avis', min_value=0, max_value= int(df['Avis'].max()), value=int(df['Avis'].quantile(1)))
+    ax10.set_ylim(-10,variation_y)
+    ax10.set_title('influence du chiffre d affaire avis(classement)',size =20)  
+    st.pyplot(fig9)
