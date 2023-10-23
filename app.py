@@ -28,18 +28,18 @@ nbr_pages = 2
 
 
 
-add_selectbox = st.sidebar.selectbox('Faire votre choix ',
-                                      ('Api Jungule Zboub',
+add_selectbox = st.sidebar.selectbox('Faire votre choix',
+                                      ('Api Jungule Toub',
                                       'Comparer plusiseurs produits',
-                                      'Chrome jungle Zboub',
+                                      'Chrome jungle Toub',
                                       'Analyse de groupe',
                                       'Analyse Excel'))
 
-st.title('Jungle Zboub')
+st.title('Jungle Toub')
 
 couleurs = ['#D56149','#49B5D5','yellow','green']#,'gray','pink','orange']  
-# Premère page 'Api Jungule Zboub'
-if  (add_selectbox == 'Api Jungule Zboub'):
+# Premère page 'Api Jungule Toub'
+if  (add_selectbox == 'Api Jungule Toub'):
   st.markdown("### Price decision tool ")
   search  = st.text_input('enter a product name from Amazon website')
   if search :
@@ -80,8 +80,8 @@ if  (add_selectbox == 'Api Jungule Zboub'):
     fig2, ax2 = plt.subplots(figsize=(15,7))
     ax2.hist(df_util['avg_rating'], bins=40 )
     st.pyplot(fig2)
-# Deuxiemme page "Chrome jungle Zboub"
-elif add_selectbox == 'Chrome jungle Zboub':
+# Deuxiemme page "Chrome jungle Toub"
+elif add_selectbox == 'Chrome jungle Toub':
   uploaded_file = st.file_uploader("Choose a file")
 
   if uploaded_file:
@@ -92,10 +92,11 @@ elif add_selectbox == 'Chrome jungle Zboub':
     # detect data language 
     langue = dectection_langue(df.columns)  
     st.write(f'App {langue}')
-
+    st.write(df) 
     # data cleaning 
     df = preprocessing(df, langue) 
-    st.subheader( f'\nNombre de produit : {df.shape[0]}\n')   
+    st.subheader( f'\nNombre de produit : {df.shape[0]}\n')  
+    st.write(df) 
     
     
     
@@ -111,13 +112,15 @@ elif add_selectbox == 'Chrome jungle Zboub':
       ax1.set_title( 'Répartition des notes de lising' ,size =20)    
 
 
-      sns.distplot(df['Évaluation'], bins=10)
+      sns.distplot(df['Avis'], bins=10)
       ax2.set_title( 'Notes', size=20) 
       #st.pyplot(fig1)  
 
       #ax2.hist(df['Évaluation'],bins=10)
       #ax2.set_title( 'Histogramme des notes ' ,size =20)
 
+      
+      
 
       fig2, (ax3, ax4)  = plt.subplots(1,2,figsize=(12,10))
       df_prix_q075 =  df['Prix'][df['Prix']<df['Prix'].quantile(0.75)]
@@ -125,7 +128,6 @@ elif add_selectbox == 'Chrome jungle Zboub':
       ax3.set_title(f'\n Prix median {df_prix_q075.median()}€' ,size =20)
 
       df_Revenus_mensuels_q075 =  df['Revenus mensuels'][df['Revenus mensuels']<df['Revenus mensuels'].quantile(0.75)]    
-      st.dataframe(df['Revenus mensuels'])
       st.write(df['Revenus mensuels'].quantile(0.75))
       ax4.boxplot(df_Revenus_mensuels_q075)
       ax4.set_title(f'Revenue median {df_Revenus_mensuels_q075.median()}€',size =20)
@@ -142,17 +144,17 @@ elif add_selectbox == 'Chrome jungle Zboub':
       ax5.set_title('',size =20)
 
       fig4, ax6  = plt.subplots(1,1,figsize=(12,5))      
-      sns.scatterplot( df['Classement'],df['Ventes mensuelles'], hue=df['Revenus segementé'])
+      sns.scatterplot( data=df, x='Classement', y='Ventes mensuelles', hue=df['Revenus segementé'])
       ax6.set_xlim(0,20000)
       ax6.set_title('Nbr de vente en fonction du classement ',size =20)
 
       
       fig5, ax7  = plt.subplots(1,1,figsize=(12,5))      
-      sns.scatterplot(df['Ventes mensuelles'], df['Évaluation'], hue=df['Revenus segementé'])
+      sns.scatterplot( data=df, x='Ventes mensuelles', y='Évaluation', hue=df['Revenus segementé'])
       ax7.set_title('influence du chiffre d affaire   M.vente(evalutation)',size =20)
 
       fig8, ax9  = plt.subplots(1,1,figsize=(12,5))      
-      sns.scatterplot( df['Avis'],df['Classement'], hue=df['Revenus segementé'])
+      sns.scatterplot( data=df, x='Avis', y='Classement', hue=df['Revenus segementé'])
       ax9.set_xlim(-2,6000)
       #ax9.set_ylim(-10,5000)
       ax9.set_title('influence du chiffre d affaire avis(classement)',size =20)
@@ -315,8 +317,8 @@ elif add_selectbox == 'Comparer plusiseurs produits':
 elif add_selectbox == 'Analyse Excel':
   st.markdown("### Analysis of data from an Excel file\n - download the sample file from this link\n -  ")
   uploaded_file = st.file_uploader("Excel product data ") 
-  #excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None) 
-  excel_file = pd.read_csv(uploaded_file)  
+  excel_file = pd.read_excel(uploaded_file, sheet_name=None, index_col=None) 
+  #excel_file = pd.read_csv(uploaded_file)  
   if excel_file:
     dexiemme_contener = st.container()
     premier_contener = st.container() 
